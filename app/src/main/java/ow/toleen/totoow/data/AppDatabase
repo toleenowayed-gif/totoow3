@@ -1,0 +1,26 @@
+@Database(entities = {MyUser.class, MySubject.class, MyTask.class}, version = 1)
+public abstract class AppDataBase extends RoomDatabase
+{
+    private static AppDataBase db;
+
+    public abstract MyUserQuery getMyUserQuery();
+
+    public abstract MySubjectQuery getMySubjectQuery();
+
+    public abstract MyTaskQuery getMyTaskQuery();
+
+    public static AppDataBase getDB(Context context)
+    {
+        if (db == null)
+        {
+            db = Room.databaseBuilder(
+                    context,
+                    AppDataBase.class,
+                    "samihDataBase")
+                    .fallbackToDestructiveMigration()
+                    .allowMainThreadQueries()
+                    .build();
+        }
+        return db;
+    }
+}
