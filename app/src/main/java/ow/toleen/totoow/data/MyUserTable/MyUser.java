@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-public class Myuser {
+
     //Entity = Table =جدول
 //عندما نريد ان نتعامل مع هذه الفئة كجدول معطيات
     /**
@@ -44,7 +44,10 @@ public class Myuser {
 
             }
 
-        }
-    }
 
-}
+        }
+
+
+
+
+
