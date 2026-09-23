@@ -1,4 +1,4 @@
-package ow.toleen.totoow.data.MyUserTable;
+package ow.toleen.totoow.Model.MyUserTable;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

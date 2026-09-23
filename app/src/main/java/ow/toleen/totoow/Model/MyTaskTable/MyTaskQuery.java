@@ -1,4 +1,4 @@
-package ow.toleen.totoow.data.MyTaskTable;
+package ow.toleen.totoow.Model.MyTaskTable;
 
 import androidx.room.Dao;
 import androidx.room.Delete;

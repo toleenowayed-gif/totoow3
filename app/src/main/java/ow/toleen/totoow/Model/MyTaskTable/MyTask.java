@@ -1,4 +1,4 @@
-package ow.toleen.totoow.data.MyTaskTable;
+package ow.toleen.totoow.Model.MyTaskTable;
 
 public class MyTask {
         public long keyid;
