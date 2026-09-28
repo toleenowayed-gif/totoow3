@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         MyTaskQuery.MySubjectQuery subjectQuery = db.getMySubjectQuery();
 //3  بناء كائن من نوع الجدول وتحديد قيم الصفات
         MyTaskQuery.MySubject s1=new MyTaskQuery.MySubject();
-        MyTaskQuery.MySubject s1.setTitle("Math");
+        s1.setTitle("Math");
         MyTaskQuery.MySubject s2=new MyTaskQuery.MySubject();
         s2.title="Computers";
 //4 اضافة كائن للجدول

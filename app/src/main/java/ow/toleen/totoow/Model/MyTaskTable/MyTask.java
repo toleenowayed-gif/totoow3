@@ -1,7 +1,7 @@
 package ow.toleen.totoow.Model.MyTaskTable;
 
 public class MyTask {
-        public long keyid;
+       @primarykey private long keyid;
         public int importance;
         public  String shortTitle;
         public String text;
