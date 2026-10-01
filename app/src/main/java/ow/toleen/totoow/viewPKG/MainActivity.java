@@ -1,4 +1,4 @@
-package ow.toleen.totoow;
+package ow.toleen.totoow.viewPKG;
 
 import android.os.Bundle;
 
@@ -8,7 +8,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import ow.toleen.totoow.AppDataBase;
 import ow.toleen.totoow.Model.MyTaskTable.MyTaskQuery;
+import ow.toleen.totoow.R;
 
 public class MainActivity extends AppCompatActivity {
 

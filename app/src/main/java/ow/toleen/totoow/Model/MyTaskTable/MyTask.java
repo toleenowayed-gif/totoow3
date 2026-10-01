@@ -1,7 +1,9 @@
 package ow.toleen.totoow.Model.MyTaskTable;
 
+import androidx.room.PrimaryKey;
+
 public class MyTask {
-       @primarykey private long keyid;
+       @PrimaryKey private long keyid;
         public int importance;
         public  String shortTitle;
         public String text;
