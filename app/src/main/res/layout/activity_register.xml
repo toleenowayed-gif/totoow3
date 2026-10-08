@@ -6,35 +6,43 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".AddTaskActivity">
+    tools:context=".viewPKG.RegisterActivity">
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:text="AddNewTask"
-        android:textSize="20sp" />
+        android:layout_marginEnd="20dp" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/editTextTextEmailAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:hint="TaskDescription"
-        android:inputType="text" />
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine3"
+        android:id="@+id/editTextTextPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:hint="Priority(e.g 1,2,3)" />
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:ems="10"
+        android:inputType="phone" />
 
     <Button
-        android:id="@+id/BtnSaveTask"
+        android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SaveTask" />
-
+        android:text="Register" />
 </LinearLayout>
