@@ -13,7 +13,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:layout_marginEnd="20dp" />
+        android:layout_marginEnd="20dp"
+        android:gravity="center"
+        android:text="UserRegistrasion"
+        android:textSize="34sp" />
+
+    <EditText
+        android:id="@+id/editTextText3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:ems="10"
+        android:hint="FullName"
+        android:inputType="text"
+        android:text="FullName" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress"
@@ -22,6 +35,7 @@
         android:layout_margin="20dp"
         android:layout_marginEnd="20dp"
         android:ems="10"
+        android:hint="Email"
         android:inputType="textEmailAddress" />
 
     <EditText
@@ -30,6 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:ems="10"
+        android:hint="Password"
         android:inputType="textPassword" />
 
     <EditText
@@ -38,6 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:ems="10"
+        android:hint="PhoneNumber"
         android:inputType="phone" />
 
     <Button
@@ -45,4 +61,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Register" />
+
 </LinearLayout>
