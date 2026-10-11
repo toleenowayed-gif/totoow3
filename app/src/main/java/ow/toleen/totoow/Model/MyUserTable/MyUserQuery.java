@@ -1,5 +1,6 @@
 package ow.toleen.totoow.Model.MyUserTable;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
@@ -51,6 +52,8 @@ import java.util.List;
         @Update
 //تعديل مستعمل او قائمة مستعملين
         void update(MyUser...values);
+
+        LiveData<List<ow.toleen.totoow.Model.MyUserTable.MyUser>> getAllUsers();
 
         class MyUser {
         }
