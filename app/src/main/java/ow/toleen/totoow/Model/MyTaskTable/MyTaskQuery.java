@@ -67,14 +67,46 @@ public interface MyTaskQuery {
 
             " ORDER BY importance DESC")
     List<MyTask> getTasksBySubjId(long key_id);
+    @Query("SELECT * FROM MyTask WHERE title=:title" +
 
-    Object getTasksByTitle(String title);
+            " ORDER BY importance DESC")
+    LiveData<List<MyTask>> getTasksByTitle(String title);
+    @Query("SELECT * FROM MyTask WHERE description=:description" +
 
+            " ORDER BY importance DESC")
     LiveData<List<MyTask>> getTasksByDescription(String description);
+    @Query("SELECT * FROM MyTask WHERE useriId=:userId" +
 
+            " ORDER BY importance DESC")
     LiveData<List<MyTask>> getTasksByUserId(long userId);
+    @Query("SELECT * FROM MyTask WHERE taskId=:taskId" +
 
+            " ORDER BY importance DESC")
     LiveData<MyTask> getTaskById(long taskId);
+    @Query("SELECT * FROM MyTask WHERE  priority=:priority" +
+
+            " ORDER BY importance DESC")
+    LiveData<List<MyTask>> getTasksByPriority(int priority);
+    @Query("SELECT * FROM MyTask WHERE  userId=:userId and title=:title" +
+
+            " ORDER BY importance DESC")
+    LiveData<List<MyTask>> getTasksByUserIdAndTitle(long userId, String title);
+    @Query("SELECT * FROM MyTask WHERE  tasks=:tasks" +
+
+            " ORDER BY importance DESC")
+    void insert(MyTask[] tasks);
+    @Query("SELECT * FROM MyTask WHERE tasks=:tasks" +
+
+            " ORDER BY importance DESC")
+    void update(MyTask[] tasks);
+    @Query("SELECT * FROM MyTask WHERE  tasks=:tasks" +
+
+            " ORDER BY importance DESC")
+    void delete(MyTask[] tasks);
+    @Query("SELECT * FROM MyTask WHERE  taskId=:taskId" +
+
+            " ORDER BY importance DESC")
+    void deleteTaskById(long taskId);
 }
 
 
