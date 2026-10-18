@@ -24,5 +24,8 @@ public class MyUserRepository {
     public LiveData<List<MyUser>> getAllUsers() {
         return allUsers;
     }
+    public LiveData<List<MyTask>> getTasksByUserId(long userId) {
+        return MyUserQuery.getTasksByUserId(userId);
+    }
 
 }
