@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey;
 public class MyTask {
        @PrimaryKey
        protected long keyid;
-        public int importance;
+        public int priority ;
         public  String shortTitle;
         public String text;
         public long time;

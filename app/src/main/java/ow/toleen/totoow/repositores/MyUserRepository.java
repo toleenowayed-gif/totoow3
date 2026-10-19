@@ -18,14 +18,21 @@ public class MyUserRepository {
 
     public MyUserRepository(Application application) {
         AppDataBase db = AppDataBase.getDB(application);
-        MyUserQuery= db.getMyUserQuery();
+        MyUserQuery = db.getMyUserQuery();
         allUsers = MyUserQuery.getAllUsers();
     }
+
     public LiveData<List<MyUser>> getAllUsers() {
         return allUsers;
     }
-    public LiveData<List<MyTask>> getTasksByUserId(long userId) {
-        return MyUserQuery.getTasksByUserId(userId);
+
+    public LiveData<List<MyUser>> getAllUsers(long userId) {
+        return MyUserQuery.getAllUsers();
+    }
+
+    public LiveData<MyUser> getTaskById(long userId) {
+
+        return MyUserQuery.getAllUsers(userId);
     }
 
 }

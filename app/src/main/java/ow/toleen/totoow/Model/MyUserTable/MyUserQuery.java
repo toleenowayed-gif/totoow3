@@ -9,7 +9,7 @@ import androidx.room.Update;
 import java.util.List;
 
 
-    /**
+/**
      * واجهة تحوي عمليات\دوال\استعلامات على قاعدة البيانات
      */
     @Dao//لتحديد ان الواجهة تحتوي استعلامات على قاعدة بيانات
@@ -55,8 +55,8 @@ import java.util.List;
 
         LiveData<List<ow.toleen.totoow.Model.MyUserTable.MyUser>> getAllUsers();
 
-        class MyUser {
-        }
+
+        LiveData<MyUser> getAllUsers(long userId);
     }
 
 
