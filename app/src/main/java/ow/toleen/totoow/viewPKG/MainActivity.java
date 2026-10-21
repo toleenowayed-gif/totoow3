@@ -9,6 +9,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import ow.toleen.totoow.AppDataBase;
+import ow.toleen.totoow.Model.MySubjectTable.MySubject;
+import ow.toleen.totoow.Model.MySubjectTable.MySubjectQuery;
 import ow.toleen.totoow.Model.MyTaskTable.MyTaskQuery;
 import ow.toleen.totoow.R;
 
@@ -21,11 +23,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         AppDataBase db=AppDataBase.getDB(getApplicationContext());
 //2 مؤشر لكائن عمليات  لجدول
-        MyTaskQuery.MySubjectQuery subjectQuery = db.getMySubjectQuery();
+        MySubjectQuery subjectQuery = db.getMySubjectQuery();
 //3  بناء كائن من نوع الجدول وتحديد قيم الصفات
-        MyTaskQuery.MySubject s1=new MyTaskQuery.MySubject();
+       MySubject s1=new MySubject();
         s1.setTitle("Math");
-        MyTaskQuery.MySubject s2=new MyTaskQuery.MySubject();
+        MySubject s2=new MySubject();
         s2.title="Computers";
 //4 اضافة كائن للجدول
         subjectQuery.insert(s1);

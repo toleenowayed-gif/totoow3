@@ -1,9 +1,9 @@
-package ow.toleen.totoow.Model.MySubjektTable;
+package ow.toleen.totoow.Model.MySubjectTable;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-public class A {
+
     @Entity
     public class MySubject
     {
@@ -17,4 +17,4 @@ public class A {
         public void setTitle(String math) {
         }
     }
-}
+
