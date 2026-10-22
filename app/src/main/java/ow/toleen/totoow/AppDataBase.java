@@ -13,8 +13,9 @@ import ow.toleen.totoow.Model.MyTaskTable.MyTaskQuery;
 import ow.toleen.totoow.Model.MyUserTable.MyUser;
 import ow.toleen.totoow.Model.MyUserTable.MyUserQuery;
 import ow.toleen.totoow.Model.Myproject.MyActorsQuery;
+import ow.toleen.totoow.Model.giftfind.MygiftfindQuery;
 
-@Database(entities = {MyUser.class, MySubject.MySubject.class, MyTask.class}, version = 1)
+@Database(entities = {MyUser.class, MySubject.class, MyTask.class}, version = 1)
     public abstract  class AppDataBase extends RoomDatabase {
         private static AppDataBase db;
 
@@ -27,6 +28,7 @@ import ow.toleen.totoow.Model.Myproject.MyActorsQuery;
 
 
         public abstract MyTaskQuery getMyTaskQuery();
+        public abstract MygiftfindQuery getGiftFindQuery();
 
         public static AppDataBase getDB(Context context)
         {
