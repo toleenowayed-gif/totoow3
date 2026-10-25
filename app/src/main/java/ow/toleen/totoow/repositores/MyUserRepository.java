@@ -26,13 +26,37 @@ public class MyUserRepository {
         return allUsers;
     }
 
-    public LiveData<List<MyUser>> getAllUsers(long userId) {
+    public LiveData<List<MyUser>> getAllUsers(long keyId) {
         return MyUserQuery.getAllUsers();
     }
 
-    public LiveData<MyUser> getTaskById(long userId) {
-
-        return MyUserQuery.getAllUsers(userId);
+    public LiveData<List<MyUser>> getUsersByemail(String email) {
+        return MyUserQuery.getUsersByemail(email);
     }
+    public LiveData<List<MyUser>> getUsersByphone(String phone) {
+        return MyUserQuery.getUsersByphone(phone);
+    }
+    public LiveData<List<MyUser>> getUsersBypassw(String passw) {
+        return MyUserQuery.getUsersBypassw(passw);
+    }
+    public LiveData<List<MyUser>> getUsersBykeyIdAndphone(long keyId, String phone) {
+        return MyUserQuery.getUsrsBykeyIdAndphone(keyId,phone);
+    }
+    public void insert(MyUser... Users) {
+        MyUserQuery.insert(Users);
+    }
+    public void update(MyUser... Users) {
+        MyUserQuery.update(Users);
+    }
+    public void updateMyuser(long keyId, String email, String phone, int passw) {
+       MyUserQuery.updateMyuser(keyId,email, phone,passw);
+    }
+    public void delete(MyUser... Users) {
+        MyUserQuery.delete(Users);
+    }
+    public void deleteTaskById(long keyId) {
+        MyUserQuery.deleteMyuserById(keyId);
+    }
+
 
 }

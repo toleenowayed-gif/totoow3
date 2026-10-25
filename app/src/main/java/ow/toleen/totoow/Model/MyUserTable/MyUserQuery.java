@@ -57,6 +57,14 @@ import java.util.List;
 
 
         LiveData<MyUser> getAllUsers(long userId);
+
+        LiveData<List<MyUser>> getUsersByemail(String email);
+
+        LiveData<List<MyUser>> getUsersByphone(String phone);
+
+        LiveData<List<MyUser>> getUsersBypassw(String passw);
+
+        LiveData<List<MyUser>> getUsrsBykeyIdAndphone(long keyId, String phone);
     }
 
 
