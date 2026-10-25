@@ -47,6 +47,16 @@ public interface MygiftfindQuery {
 
 
     LiveData<Mygiftfind> getAllgifts(long userId);
+
+    LiveData<List<Mygiftfind>> getgiftsBygifttype(String gifttype);
+
+    LiveData<List<Mygiftfind>> getgiftsBygiftcolor(String giftcolor);
+
+    LiveData<List<Mygiftfind>> getgiftsBygiftid(long giftid);
+
+    LiveData<List<Mygiftfind>> getgiftsBygiftrecipientage(int giftrecipientage);
+
+    LiveData<List<Mygiftfind>> getgiftsBygiftpriceAndgiftcolor(int giftprice, String giftcolor);
 }
 
 
