@@ -7,8 +7,7 @@ import androidx.lifecycle.LiveData;
 import java.util.List;
 
 import ow.toleen.totoow.AppDataBase;
-import ow.toleen.totoow.Model.MyTaskTable.MyTask;
-import ow.toleen.totoow.Model.MyTaskTable.MyTaskQuery;
+
 import ow.toleen.totoow.Model.MyUserTable.MyUser;
 import ow.toleen.totoow.Model.MyUserTable.MyUserQuery;
 
@@ -42,19 +41,20 @@ public class MyUserRepository {
     public LiveData<List<MyUser>> getUsersBykeyIdAndphone(long keyId, String phone) {
         return MyUserQuery.getUsrsBykeyIdAndphone(keyId,phone);
     }
-    public void insert(MyUser... Users) {
-        MyUserQuery.insert(Users);
+    public void insert(MyUser User, MyUser... Users) {
+        MyUserQuery.insert(User);
     }
     public void update(MyUser... Users) {
         MyUserQuery.update(Users);
     }
     public void updateMyuser(long keyId, String email, String phone, int passw) {
-       MyUserQuery.updateMyuser(keyId,email, phone,passw);
+       MyUserQuery.updateMyUser( keyId, email, phone, passw);
     }
     public void delete(MyUser... Users) {
         MyUserQuery.delete(Users);
     }
-    public void deleteTaskById(long keyId) {
+    public void deleteUserById(long keyId) {
+
         MyUserQuery.deleteMyuserById(keyId);
     }
 

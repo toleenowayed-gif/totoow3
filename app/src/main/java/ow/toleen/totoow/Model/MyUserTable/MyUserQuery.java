@@ -65,6 +65,12 @@ import java.util.List;
         LiveData<List<MyUser>> getUsersBypassw(String passw);
 
         LiveData<List<MyUser>> getUsrsBykeyIdAndphone(long keyId, String phone);
+
+        void updateMyUser(long keyId, String email, String phone, int passw);
+
+        void delete(MyUser[] users);
+
+        void deleteMyuserById(long keyId);
     }
 
 

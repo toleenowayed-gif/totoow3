@@ -7,8 +7,6 @@ import androidx.lifecycle.LiveData;
 import java.util.List;
 
 import ow.toleen.totoow.AppDataBase;
-import ow.toleen.totoow.Model.MyUserTable.MyUser;
-import ow.toleen.totoow.Model.MyUserTable.MyUserQuery;
 import ow.toleen.totoow.Model.giftfind.Mygiftfind;
 import ow.toleen.totoow.Model.giftfind.MygiftfindQuery;
 
@@ -43,20 +41,21 @@ public class MygiftfindRepository {
     public LiveData<List<Mygiftfind>> getgiftsBygiftpriceAndgiftcolor(int giftprice, String giftcolor) {
         return MygiftfindQuery.getgiftsBygiftpriceAndgiftcolor(giftprice,giftcolor);
     }
-    public void insert(Mygiftfind... gifts) {
+    public void insert(Mygiftfind gifts) {
+
         MygiftfindQuery.insert(gifts);
     }
     public void update(Mygiftfind... gifts) {
         MygiftfindQuery.update(gifts);
     }
-    public void updateMygiftfind(int giftprice, String email, String phone, int passw) {
-        MyUserQuery.updateMyuser(keyId,email, phone,passw);
+    public void updateMygiftfind(int giftprice, String gifttype, String giftcolor, int giftrecipientage, long giftid) {
+        MygiftfindQuery.updateMygiftfind(giftid,gifttype, giftcolor,giftrecipientage,giftid);
     }
-    public void delete(MyUser... Users) {
-        MyUserQuery.delete(Users);
+    public void delete(int gifts, Mygiftfind... mygiftfind) {
+        MygiftfindQuery.delete(gifts);
     }
-    public void deleteTaskById(long keyId) {
-        MyUserQuery.deleteMyuserById(keyId);
+    public void deletegiftById(long giftId) {
+        MygiftfindQuery.deleteMygiftById(giftId);
     }
 
 
