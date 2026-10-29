@@ -41,7 +41,7 @@ public class MyUserRepository {
     public LiveData<List<MyUser>> getUsersBykeyIdAndphone(long keyId, String phone) {
         return MyUserQuery.getUsrsBykeyIdAndphone(keyId,phone);
     }
-    public void insert(MyUser User, MyUser... Users) {
+    public void insert(MyUser... Users) {
         MyUserQuery.insert(User);
     }
     public void update(MyUser... Users) {
@@ -59,4 +59,35 @@ public class MyUserRepository {
     }
 
 
+
+    public LiveData<List<MyUser>> getUserByUserId(long userId) {
+        return null;
+    }
+
+
+    public LiveData<List<MyUser>> getUserByfullName(String fullName) {
+        return null;
+    }
+
+    public LiveData<List<MyUser>> getuserByemail(String email) {
+        return null;
+    }
+
+    public LiveData<List<MyUser>> getuserByphone(String phone) {
+        return null;
+    }
+
+    public LiveData<List<MyUser>> getuserBykeyIdAndfullName(long keyId, String fullName) {
+        return null;
+    }
+
+    public LiveData<List<MyUser>> getuserBypassw(String passw) {
+        return null;
+    }
+
+    public void updateUser(long keyId, String fullName, String email, String phone, String passw) {
+    }
+
+    public void deleteUserBykeyId(long keyId) {
+    }
 }

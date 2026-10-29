@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         btnRegisterScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, RegisterActivity.class);
+                Intent i = new Intent(MainActivity.this, SignUp.class);
                 startActivity(i);
             }
         });

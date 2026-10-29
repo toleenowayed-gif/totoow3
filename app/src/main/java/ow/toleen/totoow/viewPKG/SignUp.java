@@ -13,7 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import ow.toleen.totoow.R;
 
-public class RegisterActivity extends AppCompatActivity {
+public class SignUp extends AppCompatActivity {
  private   TextView textView;
     private TextView editTextText3;
  private EditText editTextTextEmailAddress;
