@@ -3,6 +3,7 @@ package ow.toleen.totoow.ViewModel;
 import android.app.Application;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
 import ow.toleen.totoow.Model.MyUserTable.MyUser;
 import ow.toleen.totoow.repositores.MyUserRepository;
 
-public class MyUserViewModel {
+public class MyUserViewModel extends AndroidViewModel {
     private MyUserRepository repository;
     private LiveData<List<MyUser>> allusers;
 
@@ -45,6 +46,14 @@ public class MyUserViewModel {
     public void insert(MyUser users) {
         repository.insert(users);
     }
+    public MyUser getUserByEmail(String email) {
+        return repository.getUserByEmail(email);
+    }
+
+    public MyUser login(String email, String password) {
+        return repository.login(email, password);
+    }
+
     public void update(MyUser... users) {
         repository.update(users);
     }

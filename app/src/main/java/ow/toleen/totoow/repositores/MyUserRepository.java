@@ -90,4 +90,16 @@ public class MyUserRepository {
 
     public void deleteUserBykeyId(long keyId) {
     }
+    public MyUser getUserByEmail(String email) {
+        return MyUserRepository.getMyUserByEmail(email);
+    }
+
+    private static MyUser getMyUserByEmail(String email) {
+        return null;
+    }
+
+    public MyUser login(String email, String password) {
+        return null;
+    }
 }
+
