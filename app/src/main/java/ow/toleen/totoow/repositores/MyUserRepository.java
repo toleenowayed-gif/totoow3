@@ -41,8 +41,8 @@ public class MyUserRepository {
     public LiveData<List<MyUser>> getUsersBykeyIdAndphone(long keyId, String phone) {
         return MyUserQuery.getUsrsBykeyIdAndphone(keyId,phone);
     }
-    public void insert(MyUser... Users) {
-        MyUserQuery.insert(User);
+    public void insert(MyUser Users) {
+        MyUserQuery.insert(Users);
     }
     public void update(MyUser... Users) {
         MyUserQuery.update(Users);

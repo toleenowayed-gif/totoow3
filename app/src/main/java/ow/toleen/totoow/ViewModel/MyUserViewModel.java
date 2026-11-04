@@ -7,10 +7,8 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
-import ow.toleen.totoow.Model.MyTaskTable.MyTask;
 import ow.toleen.totoow.Model.MyUserTable.MyUser;
 import ow.toleen.totoow.repositores.MyUserRepository;
-import ow.toleen.totoow.repositores.TaskRepository;
 
 public class MyUserViewModel {
     private MyUserRepository repository;
@@ -44,7 +42,7 @@ public class MyUserViewModel {
     public LiveData<List<MyUser>> getuserBykeyIdAndfullName(long KeyId, String fullName) {
         return repository.getuserBykeyIdAndfullName(KeyId,fullName );
     }
-    public void insert(MyUser... users) {
+    public void insert(MyUser users) {
         repository.insert(users);
     }
     public void update(MyUser... users) {
