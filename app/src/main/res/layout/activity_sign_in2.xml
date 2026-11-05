@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4A1215"
+    android:background="@color/white"
     android:fillViewport="true"
     tools:context=".viewPKG.SignInActivity">
 
@@ -16,26 +16,26 @@
         android:orientation="vertical"
         android:padding="24dp">
 
-        <!-- Polished Circular Card Container for Gift Box Photo -->
+        <!-- Polished Rectangular Card Container -->
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="110dp"
-            android:layout_height="110dp"
+            android:layout_width="160dp"
+            android:layout_height="100dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="12dp"
-            app:cardBackgroundColor="#5E181D"
-            app:cardCornerRadius="55dp"
+            app:cardBackgroundColor="#FFF8F8"
+            app:cardCornerRadius="16dp"
             app:cardElevation="6dp"
-            app:strokeColor="@color/gift_rose_gold"
-            app:strokeWidth="2dp">
+            app:strokeColor="#4A1215"
+            app:strokeWidth="1.5dp">
 
             <ImageView
                 android:id="@+id/imageView4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:contentDescription="Gift Photo"
-                android:padding="16dp"
+                android:contentDescription="Gift Box Illustration"
+                android:padding="12dp"
                 android:scaleType="centerInside"
-                android:src="@mipmap/ic_gift" />
+                android:src="@drawable/ic_gift_box_vector" />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -45,20 +45,20 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="24dp"
-            android:letterSpacing="0.15"
+            android:letterSpacing="0.2"
             android:text="GIVORA"
-            android:textColor="@color/gift_rose_gold"
-            android:textSize="26sp"
+            android:textColor="#4A1215"
+            android:textSize="28sp"
             android:textStyle="bold" />
 
         <!-- Card Container for Sign In Form -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="#5E181D"
+            app:cardBackgroundColor="#FFF8F8"
             app:cardCornerRadius="24dp"
-            app:cardElevation="10dp"
-            app:strokeColor="@color/gift_rose_gold"
+            app:cardElevation="8dp"
+            app:strokeColor="#4A1215"
             app:strokeWidth="1dp">
 
             <LinearLayout
@@ -74,7 +74,7 @@
                     android:layout_marginBottom="20dp"
                     android:gravity="center"
                     android:text="Sign In"
-                    android:textColor="@color/white"
+                    android:textColor="#4A1215"
                     android:textSize="26sp"
                     android:textStyle="bold" />
 
@@ -83,37 +83,37 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:backgroundTint="@color/gift_rose_gold"
+                    android:backgroundTint="#4A1215"
                     android:ems="10"
                     android:hint="Email Address"
                     android:inputType="textEmailAddress"
                     android:minHeight="48dp"
                     android:padding="12dp"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/gift_cream" />
+                    android:textColor="#4A1215"
+                    android:textColorHint="#965257" />
 
                 <EditText
                     android:id="@+id/etPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="24dp"
-                    android:backgroundTint="@color/gift_rose_gold"
+                    android:backgroundTint="#4A1215"
                     android:ems="10"
                     android:hint="Password"
                     android:inputType="textPassword"
                     android:minHeight="48dp"
                     android:padding="12dp"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/gift_cream" />
+                    android:textColor="#4A1215"
+                    android:textColorHint="#965257" />
 
                 <Button
                     android:id="@+id/btnSignIn"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
                     android:layout_marginBottom="16dp"
-                    android:backgroundTint="@color/gift_rose_gold"
+                    android:backgroundTint="#4A1215"
                     android:text="Sign In"
-                    android:textColor="#4A1215"
+                    android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -123,9 +123,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
                     android:text="Don't have an account? Register"
-                    android:textColor="@color/white"
+                    android:textColor="#4A1215"
                     android:textSize="14sp"
-                    app:strokeColor="@color/gift_rose_gold" />
+                    app:strokeColor="#4A1215" />
 
             </LinearLayout>
 

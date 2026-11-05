@@ -1,0 +1,64 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Drop Shadow -->
+    <path
+        android:fillColor="#11000000"
+        android:pathData="M4,21h16a1,1 0,0 0,1 -1v1a1,1 0,0 1,-1 2H4a1,1 0,0 1,-1 -1v-1a1,1 0,0 0,1 1z"/>
+
+    <!-- Gift Box Main Body (Deep Red #4A1215) -->
+    <path
+        android:fillColor="#4A1215"
+        android:pathData="M3,8h18v12a2,2 0,0 1,-2 2H5a2,2 0,0 1,-2 -2V8z"/>
+
+    <!-- Gift Box Front Panel -->
+    <path
+        android:fillColor="#5A181D"
+        android:pathData="M3,10h18v10a2,2 0,0 1,-2 2H5a2,2 0,0 1,-2 -2V10z"/>
+
+    <!-- Gift Box Lid Base -->
+    <path
+        android:fillColor="#6B1D25"
+        android:pathData="M2,5h20v3H2z"/>
+
+    <!-- Gift Box Lid Highlight -->
+    <path
+        android:fillColor="#7C222B"
+        android:pathData="M2,5h20v1.5H2z"/>
+
+    <!-- Vertical Ribbon (White) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M11,5h2v17h-2z"/>
+
+    <!-- Horizontal Ribbon (White) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M2,12h20v2H2z"/>
+
+    <!-- Bow Loop Left -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,5C10,2.5 6.5,2.5 5.5,4.5c-1,2 -0.2,4.5 2,5.5l4.5,-5z"/>
+
+    <!-- Bow Loop Right -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,5c2,-2.5 5.5,-2.5 6.5,-4.5c1,2 0.2,4.5 -2,5.5l-4.5,-5z"/>
+
+    <!-- Bow Knot -->
+    <path
+        android:fillColor="#4A1215"
+        android:pathData="M10.5,3.5h3v3h-3z"/>
+
+    <!-- Ribbon Tails -->
+    <path
+        android:fillColor="#76252C"
+        android:pathData="M10,7l-3,4l1,0.5l3,-3.5z"/>
+    <path
+        android:fillColor="#76252C"
+        android:pathData="M14,7l3,4l-1,0.5l-3,-3.5z"/>
+</vector>

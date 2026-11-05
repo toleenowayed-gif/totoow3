@@ -4,6 +4,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gift_red">#76252C</color>
     <color name="gift_dark_red">#58181F</color>
+    <color name="gift_gold">#FFD700</color>
+    <color name="gift_gold_dark">#D4AF37</color>
     <color name="gift_rose_gold">#E8C5C8</color>
     <color name="gift_rose_light">#F8ECEE</color>
     <color name="gift_cream">#F5EBE6</color>
