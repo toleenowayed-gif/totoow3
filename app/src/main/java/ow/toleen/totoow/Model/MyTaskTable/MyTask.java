@@ -2,7 +2,7 @@ package ow.toleen.totoow.Model.MyTaskTable;
 
 import androidx.room.PrimaryKey;
 
-public class MyTask {
+public  class MyTask {
        @PrimaryKey
        protected long keyid;
         public int priority ;
