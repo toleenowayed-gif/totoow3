@@ -1,17 +1,18 @@
 package ow.toleen.totoow.Model.MyTaskTable;
 
 import androidx.lifecycle.LiveData;
+import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
 import java.util.List;
-
+@Dao
 public interface MyTaskQuery {
 
 
-    @Query(value = "SELECT * FROM MyTask ORDER BY importance DESC")
+    @Query("SELECT * FROM MyTask ORDER BY importance DESC")
     List<MyTask> getAllTasks();
 
 
@@ -94,19 +95,19 @@ public interface MyTaskQuery {
     @Query("SELECT * FROM MyTask WHERE  tasks=:tasks" +
 
             " ORDER BY importance DESC")
-    void insert(MyTask[] tasks);
+    public void insert(MyTask[] tasks);
     @Query("SELECT * FROM MyTask WHERE tasks=:tasks" +
 
             " ORDER BY importance DESC")
-    void update(MyTask[] tasks);
+    public void update(MyTask[] tasks);
     @Query("SELECT * FROM MyTask WHERE  tasks=:tasks" +
 
             " ORDER BY importance DESC")
-    void delete(MyTask[] tasks);
+    public void delete(MyTask[] tasks);
     @Query("SELECT * FROM MyTask WHERE  taskId=:taskId" +
 
             " ORDER BY importance DESC")
-    void deleteTaskById(long taskId);
+   public void deleteTaskById(long taskId);
 }
 
 

@@ -1,59 +1,47 @@
-<<<<<<< Original<?xml version="1.0" encoding="utf-8"?><manifest xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools">
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-<application
-    android:allowBackup="true"
-    android:dataExtractionRules="@xml/data_extraction_rules"
-    android:fullBackupContent="@xml/backup_rules"
-    android:icon="@mipmap/ic_launcher"
-    android:label="@string/app_name"
-    android:roundIcon="@mipmap/ic_launcher_round"
-    android:supportsRtl="true"
-    android:theme="@style/Theme.Totoow">
-    <activity
-        android:name=".viewPKG.MainActivity"
-        android:exported="true"
-        android:windowSoftInputMode="adjustResize">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Totoow">
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
-    <activity
-        android:name=".viewPKG.TActivity"
-        android:exported="false"
-        android:windowSoftInputMode="adjustResize" />
-    <activity
-        android:name=".viewPKG.MainActivity"
-        android:exported="false"
-        android:windowSoftInputMode="adjustResize" />
-    <activity
-        android:name=".AddTaskActivity"
-        android:exported="false"
-        android:windowSoftInputMode="adjustResize" />
-    <activity
-        android:name=".viewPKG.SignUp"
-        android:exported="false"
-        android:windowSoftInputMode="adjustResize" />
-    <activity
-        android:name=".viewPKG.SignInActivity"
-        android:exported="false"
-        android:windowSoftInputMode="adjustResize" />
-    <activity
-        android:name=".viewPKG.SignInActivity"
-        android:exported="false"
-        android:windowSoftInputMode="adjustResize" />
-</application>
+        <activity
+            android:name=".viewPKG.splashscreensctivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-</manifest>=======
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-<application>
-    <activity
-        android:name="ow.toleen.totoow.viewPKG.splashscreensctivity"
-        android:exported="false"
+        <activity
+            android:name=".viewPKG.SignInActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
 
-        android:windowSoftInputMode="adjustResize" />
-</application>
-</manifest>>>>>>>> Added
+        <activity
+            android:name=".viewPKG.SignUp"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".viewPKG.MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".AddTaskActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+    </application>
+
+</manifest>

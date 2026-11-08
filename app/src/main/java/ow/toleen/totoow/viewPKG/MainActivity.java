@@ -3,8 +3,10 @@ package ow.toleen.totoow.viewPKG;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -65,10 +67,20 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        @Override
-                public boolean OnCreateOptionsMenu(Menu menu){
-                    getMenuInflater().inflate(R.menu.main_menu,menu);
-                    return true;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+         getMenuInflater().inflate(R.menu.giftmenu,menu);
+         return true;
+    }
+    @Override
+    public boolean OnOptionsItemSekected(MenuItem item){
+        if(item.getItemId()==R.id.btnSignIn){
+            Toast.makeText(this, "Settings",Toast.LENGTH_SHORT);
+        }
+        if(item.getItemId()==R.id.itmSignOut){
+
         }
     }
 }

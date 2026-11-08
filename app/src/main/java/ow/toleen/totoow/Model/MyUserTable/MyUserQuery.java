@@ -2,6 +2,7 @@ package ow.toleen.totoow.Model.MyUserTable;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
@@ -65,9 +66,9 @@ import java.util.List;
         LiveData<List<MyUser>> getUsersBypassw(String passw);
 
         LiveData<List<MyUser>> getUsrsBykeyIdAndphone(long keyId, String phone);
-
+       @Update
         void updateMyUser(long keyId, String email, String phone, int passw);
-
+        @Delete
         void delete(MyUser[] users);
 
         void deleteMyuserById(long keyId);
