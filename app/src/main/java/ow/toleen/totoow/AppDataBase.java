@@ -12,7 +12,6 @@ import ow.toleen.totoow.Model.MyTaskTable.MyTask;
 import ow.toleen.totoow.Model.MyTaskTable.MyTaskQuery;
 import ow.toleen.totoow.Model.MyUserTable.MyUser;
 import ow.toleen.totoow.Model.MyUserTable.MyUserQuery;
-import ow.toleen.totoow.Model.Myproject.MyActorsQuery;
 import ow.toleen.totoow.Model.giftfind.MygiftfindQuery;
 
 @Database(entities = {MyUser.class, MySubject.class, MyTask.class}, version = 1)
@@ -24,7 +23,6 @@ import ow.toleen.totoow.Model.giftfind.MygiftfindQuery;
         public abstract MyUserQuery getMyUserQuery();
 
         public abstract MySubjectQuery getMySubjectQuery();
-        public abstract MyActorsQuery getMyActorsQuery();
 
 
         public abstract MyTaskQuery getMyTaskQuery();

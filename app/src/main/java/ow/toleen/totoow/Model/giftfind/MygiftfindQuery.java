@@ -8,33 +8,29 @@ import androidx.room.Update;
 
 import java.util.List;
 
-import ow.toleen.totoow.Model.MyUserTable.MyUser;
-import ow.toleen.totoow.Model.Myproject.MyActorsQuery;
-
 @Dao
 public interface MygiftfindQuery {
     @Query("SELECT * FROM Mygiftfind")
-    LiveData<List<MygiftfindQuery>> getAllGift();
-    // استخراج مستعمل حسب رقم المميز لهid
-
+    // استخراج مستعمل حسب رقم المميز ;
+    // لهid
+    List<Mygiftfind> getAllgift();
     @Query("SELECT * FROM Mygiftfind WHERE giftid IN (:giftid)")
-
-    LiveData<List<MygiftfindQuery>> loadAllBytypes(String[] usertype);
+    List<Mygiftfind> loadAllByIds(int[] giftIds);
 
     @Insert
 // اضافة مستعمل او مجموعة مستعملين
-    void insertAll(Mygiftfind... gifts);
+    public void insertAll(Mygiftfind... gifts);
     // حذف @Delete// حذف
-    void delete(Mygiftfind gift);
+   public void delete(Mygiftfind gift);
     //حذف حسب الرقم المميز id
     @Query("Delete From Mygiftfind WHERE giftid=id ")
 
-    void delete(int id);
+   public void delete(int id);
 
     //اضافة مستعمل واحد
     @Insert
     default//اضافة مستعمل واحد
-    void insert(Mygiftfind mygiftfind) {
+    public void insert(Mygiftfind mygiftfind) {
 
     }
 

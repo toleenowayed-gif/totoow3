@@ -35,12 +35,13 @@ import java.util.List;
         @Insert
 // اضافة مستعمل او مجموعة مستعملين
         void insertAll(MyUser... users);
+        @Delete
         // حذف @Delete// حذف
-        void delete(MyUser user);
+        public void delete(MyUser user);
         //حذف حسب الرقم المميز id
         @Query("Delete From MyUser WHERE keyid=:id ")
 
-        void delete(int id);
+        public void delete(int id);
 
         //اضافة مستعمل واحد
         @Insert
@@ -52,26 +53,14 @@ import java.util.List;
         //تعديل مستعمل او قائمة مستعملين
         @Update
 //تعديل مستعمل او قائمة مستعملين
-        void update(MyUser...values);
+       public void update(MyUser...values);
 
-        LiveData<List<ow.toleen.totoow.Model.MyUserTable.MyUser>> getAllUsers();
-
-
-        LiveData<MyUser> getAllUsers(long userId);
-
-        LiveData<List<MyUser>> getUsersByemail(String email);
-
-        LiveData<List<MyUser>> getUsersByphone(String phone);
-
-        LiveData<List<MyUser>> getUsersBypassw(String passw);
-
-        LiveData<List<MyUser>> getUsrsBykeyIdAndphone(long keyId, String phone);
        @Update
-        void updateMyUser(long keyId, String email, String phone, int passw);
+       public void updateMyUser(MyUser m);
         @Delete
-        void delete(MyUser[] users);
-
-        void deleteMyuserById(long keyId);
+        public void delete(MyUser... users);
+        @Delete
+        public void deleteMyuserById(MyUser... users);
     }
 
 
