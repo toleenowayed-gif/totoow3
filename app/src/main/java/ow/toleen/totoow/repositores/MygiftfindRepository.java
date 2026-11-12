@@ -6,17 +6,19 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
-import ow.toleen.totoow.AppDataBase;
+import ow.toleen.totoow.Model.AppDataBase;
 import ow.toleen.totoow.Model.giftfind.Mygiftfind;
 import ow.toleen.totoow.Model.giftfind.MygiftfindQuery;
 
 public class MygiftfindRepository {
     private MygiftfindQuery MygiftfindQuery;
     private LiveData<List<MygiftfindQuery>> allgifts;
+    private Mygiftfind gift;
+
     public MygiftfindRepository(Application application) {
         AppDataBase db = AppDataBase.getDB(application);
         MygiftfindQuery = db.getGiftFindQuery();
-        allgifts = MygiftfindQuery.getAllGift();
+        allgifts = MygiftfindQuery.getAllgifts();
     }
     public LiveData<List<MygiftfindQuery>> getAllgifts() {
         return allgifts;
@@ -49,13 +51,13 @@ public class MygiftfindRepository {
         MygiftfindQuery.update(gifts);
     }
     public void updateMygiftfind(int giftprice, String gifttype, String giftcolor, int giftrecipientage, long giftid) {
-        MygiftfindQuery.updateMygiftfind(giftid,gifttype, giftcolor,giftrecipientage,giftid);
+
     }
     public void delete(int gifts, Mygiftfind... mygiftfind) {
-        MygiftfindQuery.delete(gifts);
+        MygiftfindQuery.delete(gift);
     }
     public void deletegiftById(long giftId) {
-        MygiftfindQuery.deleteMygiftById(giftId);
+        MygiftfindQuery.getgiftsBygiftid(giftId);
     }
 
 

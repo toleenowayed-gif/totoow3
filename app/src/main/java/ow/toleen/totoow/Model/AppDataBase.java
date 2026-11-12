@@ -1,4 +1,4 @@
-package ow.toleen.totoow;
+package ow.toleen.totoow.Model;
 
 import android.content.Context;
 
@@ -14,7 +14,7 @@ import ow.toleen.totoow.Model.MyUserTable.MyUser;
 import ow.toleen.totoow.Model.MyUserTable.MyUserQuery;
 import ow.toleen.totoow.Model.giftfind.MygiftfindQuery;
 
-@Database(entities = {MyUser.class, MySubject.class, MyTask.class}, version = 1)
+@Database(entities = {MyUser.class, MySubject.class, MyTask.class}, version = 2)
     public abstract  class AppDataBase extends RoomDatabase {
         private static AppDataBase db;
 

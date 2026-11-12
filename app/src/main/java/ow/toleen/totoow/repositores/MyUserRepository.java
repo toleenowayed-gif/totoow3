@@ -6,27 +6,27 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
-import ow.toleen.totoow.AppDataBase;
+import ow.toleen.totoow.Model.AppDataBase;
 
 import ow.toleen.totoow.Model.MyUserTable.MyUser;
 import ow.toleen.totoow.Model.MyUserTable.MyUserQuery;
 
 public class MyUserRepository {
     private MyUserQuery MyUserQuery;
-    private LiveData<List<MyUser>> allUsers;//مبنى معطيات يحوي جميع المهلام المستخرجة
+    private List<MyUser> allUsers;//مبنى معطيات يحوي جميع المهلام المستخرجة
 
     public MyUserRepository(Application application) {
         AppDataBase db = AppDataBase.getDB(application);
         MyUserQuery = db.getMyUserQuery();
-        allUsers = MyUserQuery.getAllUsers();
+        allUsers = MyUserQuery.getAll();
     }
 
     public LiveData<List<MyUser>> getAllUsers() {
         return allUsers;
     }
 
-    public LiveData<List<MyUser>> getAllUsers(long keyId) {
-        return MyUserQuery.getAllUsers();
+    public List<MyUser> getAllUsers(long keyId) {
+        return MyUserQuery.getAll();
     }
 
     public LiveData<List<MyUser>> getUsersByemail(String email) {
@@ -48,7 +48,7 @@ public class MyUserRepository {
         MyUserQuery.update(Users);
     }
     public void updateMyuser(long keyId, String email, String phone, int passw) {
-       MyUserQuery.updateMyUser( keyId, email, phone, passw);
+
     }
     public void delete(MyUser... Users) {
         MyUserQuery.delete(Users);

@@ -1,5 +1,9 @@
 package ow.toleen.totoow.Model.MyUserTable;
 
+import static android.icu.text.MessagePattern.ArgType.SELECT;
+
+import android.provider.ContactsContract;
+
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
@@ -61,6 +65,15 @@ import java.util.List;
         public void delete(MyUser... users);
         @Delete
         public void deleteMyuserById(MyUser... users);
+
+@Query("SELECT * FROM MyUser WHERE keyId=:keyId AND phone=:phone")
+        LiveData<List<MyUser>> getUsrsBykeyIdAndphone(long keyId, String phone);
+        @Query("SELECT * FROM MyUser WHERE email=:email")
+        LiveData<List<MyUser>> getUsersByemail(String email);
+        @Query("SELECT * FROM MyUser WHERE phone=:phone")
+        LiveData<List<MyUser>> getUsersByphone(String phone);
+        @Query("SELECT * FROM MyUser WHERE passw=:passw")
+        LiveData<List<MyUser>> getUsersBypassw(String passw);
     }
 
 

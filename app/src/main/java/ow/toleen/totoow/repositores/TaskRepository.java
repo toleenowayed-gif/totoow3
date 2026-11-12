@@ -6,7 +6,7 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
-import ow.toleen.totoow.AppDataBase;
+import ow.toleen.totoow.Model.AppDataBase;
 import ow.toleen.totoow.Model.MyTaskTable.MyTask;
 import ow.toleen.totoow.Model.MyTaskTable.MyTaskQuery;
 
@@ -18,7 +18,7 @@ public class TaskRepository {
     public TaskRepository(Application application) {
         AppDataBase db = AppDataBase.getDB(application);
         taskQuery = db.getMyTaskQuery();
-        allTasks = taskQuery.getAllTasks();
+        allTasks = taskQuery.getTasksBy();
     }
 
     public List<MyTask> getAllTasks() {

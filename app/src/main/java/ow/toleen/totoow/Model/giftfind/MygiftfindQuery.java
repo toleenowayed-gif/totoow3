@@ -10,53 +10,41 @@ import java.util.List;
 
 @Dao
 public interface MygiftfindQuery {
-    @Query("SELECT * FROM Mygiftfind")
-    // استخراج مستعمل حسب رقم المميز ;
-    // لهid
-    List<Mygiftfind> getAllgift();
-    @Query("SELECT * FROM Mygiftfind WHERE giftid IN (:giftid)")
-    List<Mygiftfind> loadAllByIds(int[] giftIds);
+
+    @Query("SELECT * FROM Mygiftfind  WHERE giftid =:giftid ORDER BY time DESC")
+   List<Mygiftfind>getAllgifts(long giftid);
 
     @Insert
 // اضافة مستعمل او مجموعة مستعملين
-    public void insertAll(Mygiftfind... gifts);
+   void insert(Mygiftfind... gift);
     // حذف @Delete// حذف
-   public void delete(Mygiftfind gift);
+   void delete(Mygiftfind... gift);
     //حذف حسب الرقم المميز id
-    @Query("Delete From Mygiftfind WHERE giftid=id ")
 
-   public void delete(int id);
 
     //اضافة مستعمل واحد
-    @Insert
-    default//اضافة مستعمل واحد
-    public void insert(Mygiftfind mygiftfind) {
-
-    }
 
     //تعديل مستعمل او قائمة مستعملين
     @Update
 //تعديل مستعمل او قائمة مستعملين
-    void update(Mygiftfind...values);
-
-    LiveData<List<Mygiftfind>> getAllgifts();
+    void update(Mygiftfind...gift);
 
 
-    LiveData<Mygiftfind> getAllgifts(long userId);
-
+    @Query("SELECT * FROM Mygiftfind WHERE gifttype=:gifttype")
     LiveData<List<Mygiftfind>> getgiftsBygifttype(String gifttype);
-
+    @Query("SELECT * FROM Mygiftfind WHERE giftcolor=:giftcolor")
     LiveData<List<Mygiftfind>> getgiftsBygiftcolor(String giftcolor);
-
+    @Query("SELECT * FROM Mygiftfind WHERE giftid=:giftid")
     LiveData<List<Mygiftfind>> getgiftsBygiftid(long giftid);
-
+    @Query("SELECT * FROM Mygiftfind WHERE giftrecipientage=:giftrecipientage")
     LiveData<List<Mygiftfind>> getgiftsBygiftrecipientage(int giftrecipientage);
-
+    @Query("SELECT * FROM Mygiftfind WHERE giftprice=:giftprice AND giftcolor=:giftcolor")
     LiveData<List<Mygiftfind>> getgiftsBygiftpriceAndgiftcolor(int giftprice, String giftcolor);
 
-    void updateMygiftfind(long giftid, String gifttype, String giftcolor, int giftrecipientage, long giftid1);
 
-    void deleteMygiftById(long giftId);
+    LiveData<List<MygiftfindQuery>> getAllgifts();
+
+
 }
 
 
