@@ -21,11 +21,8 @@ public class MyUserRepository {
         allUsers = MyUserQuery.getAll();
     }
 
-    public LiveData<List<MyUser>> getAllUsers() {
-        return allUsers;
-    }
 
-    public List<MyUser> getAllUsers(long keyId) {
+    public LiveData<List<MyUser>> getAllUsers() {
         return MyUserQuery.getAll();
     }
 

@@ -22,11 +22,11 @@ import java.util.List;
     {   //استخراج جميع المستعملين
         @Query("SELECT * FROM MyUser")
 
-        List<MyUser> getAll();
+        LiveData<List<MyUser>> getAll();
         // استخراج مستعمل حسب رقم المميز لهid
 
         @Query("SELECT * FROM MyUser WHERE keyid IN (:userIds)")
-        List<MyUser> loadAllByIds(int[] userIds);
+        LiveData<List<MyUser>> loadAllByIds(int[] userIds);
         //هل المستعمل موجود حسب الايميل وكلمة السر
         @Query("SELECT * FROM MyUser WHERE email = :myEmail AND passw = :myPassw LIMIT 1")
 
@@ -74,6 +74,9 @@ import java.util.List;
         LiveData<List<MyUser>> getUsersByphone(String phone);
         @Query("SELECT * FROM MyUser WHERE passw=:passw")
         LiveData<List<MyUser>> getUsersBypassw(String passw);
+        @Query("DELETE  FROM MyUser WHERE keyId=:keyId")
+
+        void deleteMyuserById(long keyId);
     }
 
 

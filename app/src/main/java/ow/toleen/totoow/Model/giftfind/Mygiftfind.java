@@ -19,6 +19,8 @@ public class Mygiftfind {
     public long giftid;
 
     public static LiveData<List<Mygiftfind>> getAllgifts() {
+
+        return null;
     }
 
     public int getGiftprice() {

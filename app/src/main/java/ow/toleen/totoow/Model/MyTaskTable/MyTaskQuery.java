@@ -50,8 +50,8 @@ public interface MyTaskQuery {
     @Delete
     void deleteTask(MyTask... tasks);
 
-    @Query("DELETE FROM MyTask WHERE keyId=:kid")
-    void deleteTask(long kid);
+    @Query("DELETE FROM MyTask WHERE keyId=:keyid")
+    void deleteTaskByid(long keyid);
 
     /**
      * استخراج جميع المهام التابعة لرقم الموضوع
@@ -72,7 +72,27 @@ public interface MyTaskQuery {
     @Update
     public void update(MyTask... tasks);
 
-    }
+@Query("SELECT * FROM MyTask WHERE userId=:userId AND text=:text")
+    LiveData<List<MyTask>> getTasksByuserIdAndtext(long userId, String text);
+    @Query("SELECT * FROM MyTask WHERE  subjId=:subjId")
+    LiveData<MyTask> getTaskById(long  subjId);
+    @Query("SELECT * FROM MyTask WHERE shortTitle=:shortTitle")
+    LiveData<List<MyTask>> getTasksByDescription(String shortTitle);
+    @Query("SELECT * FROM MyTask WHERE userId=:userId AND time=:time")
+    LiveData<List<MyTask>> getTasksByUserIdAndTitle(long userId, long time);
+  
+    @Query("SELECT * FROM MyTask WHERE userId=:userId ")
+    LiveData<List<MyTask>> getTasksByUserId(long userId);
+    @Query("SELECT * FROM MyTask WHERE priority=:priority")
+    LiveData<List<MyTask>> getTasksByPriority(int priority);
+    @Query("DELETE  FROM MyTask WHERE taskid=:taskid")
+    void deleteTaskById(long taskid);
+    @Query("SELECT * FROM MyTask WHERE title=:title")
+    LiveData<List<MyTask>> getTasksByTitle(String title);
+    @Query("SELECT * FROM MyTask WHERE shortTitle=:shortTitle AND userId=:userId")
+
+    LiveData<List<MyTask>> getTasksByUserIdAndshortTitle(long userId, String shortTitle);
+}
 
 
 

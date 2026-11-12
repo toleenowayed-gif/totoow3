@@ -18,7 +18,7 @@ public class TaskRepository {
     public TaskRepository(Application application) {
         AppDataBase db = AppDataBase.getDB(application);
         taskQuery = db.getMyTaskQuery();
-        allTasks = taskQuery.getTasksBy();
+        allTasks = taskQuery.getAllTasks();
     }
 
     public List<MyTask> getAllTasks() {
@@ -33,8 +33,8 @@ public class TaskRepository {
 
         return taskQuery.getTaskById(taskId);
     }
-    public LiveData<List<MyTask>> getTasksByTitle(String title) {
-        return taskQuery.getTasksByTitle(title);
+    public LiveData<List<MyTask>> getTasksByTitle(String Title) {
+        return taskQuery.getTasksByTitle(Title);
     }
     public LiveData<List<MyTask>> getTasksByDescription(String description) {
         return taskQuery.getTasksByDescription(description);
@@ -42,8 +42,8 @@ public class TaskRepository {
     public LiveData<List<MyTask>> getTasksByPriority(int priority) {
         return taskQuery.getTasksByPriority(priority);
     }
-    public LiveData<List<MyTask>> getTasksByUserIdAndTitle(long userId, String title) {
-        return taskQuery.getTasksByUserIdAndTitle(userId, title);
+    public LiveData<List<MyTask>> getTasksByUserIdAndTitle(long userId, String shortTitle) {
+        return taskQuery.getTasksByUserIdAndshortTitle(userId, shortTitle);
     }
     public void insert(MyTask... tasks) {
         taskQuery.insert(tasks);
@@ -52,10 +52,10 @@ public class TaskRepository {
         taskQuery.update(tasks);
     }
     public void updateTask(long taskId, String title, String description, int priority) {
-        taskQuery.updateTask(taskId, title, description, priority);
+
     }
     public void delete(MyTask... tasks) {
-        taskQuery.delete(tasks);
+        taskQuery.deleteTask(tasks);
     }
     public void deleteTaskById(long taskId) {
         taskQuery.deleteTaskById(taskId);

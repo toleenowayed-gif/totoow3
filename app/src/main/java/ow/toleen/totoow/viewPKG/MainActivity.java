@@ -71,17 +71,16 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-         getMenuInflater().inflate(R.menu.giftmenu,menu);
-         return true;
+        getMenuInflater().inflate(R.menu.giftmenu, menu);
+        return true;
     }
-    @Override
-    public boolean OnOptionsItemSekected(MenuItem item){
-        if(item.getItemId()==R.id.btnSignIn){
-            Toast.makeText(this, "Settings",Toast.LENGTH_SHORT);
+
+    public void OnOptionsItemSekected(MenuItem item) {
+        if (item.getItemId() == R.id.btnSignIn) {
+            Toast.makeText(this, "Settings", Toast.LENGTH_SHORT);
         }
-        if(item.getItemId()==R.id.itmSignOut){
+        if (item.getItemId() == R.id.btnSignIn) {
 
         }
     }
 }
-

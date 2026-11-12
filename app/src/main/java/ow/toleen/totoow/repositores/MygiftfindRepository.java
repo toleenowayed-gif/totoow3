@@ -12,16 +12,13 @@ import ow.toleen.totoow.Model.giftfind.MygiftfindQuery;
 
 public class MygiftfindRepository {
     private MygiftfindQuery MygiftfindQuery;
-    private LiveData<List<MygiftfindQuery>> allgifts;
+    private LiveData<List<Mygiftfind>> allgifts;
     private Mygiftfind gift;
 
     public MygiftfindRepository(Application application) {
         AppDataBase db = AppDataBase.getDB(application);
         MygiftfindQuery = db.getGiftFindQuery();
         allgifts = MygiftfindQuery.getAllgifts();
-    }
-    public LiveData<List<MygiftfindQuery>> getAllgifts() {
-        return allgifts;
     }
 
     public LiveData<List<Mygiftfind>> getAllgifts(int giftprice) {

@@ -13,7 +13,8 @@ public  class MyTask {
         public boolean isCompleted;
         public long subjId;
         public long userId;
-
+    public long taskId;
+    public  String title;
     public int getPriority() {
         return priority;
     }

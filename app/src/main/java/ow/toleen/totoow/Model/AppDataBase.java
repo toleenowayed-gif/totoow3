@@ -12,10 +12,11 @@ import ow.toleen.totoow.Model.MyTaskTable.MyTask;
 import ow.toleen.totoow.Model.MyTaskTable.MyTaskQuery;
 import ow.toleen.totoow.Model.MyUserTable.MyUser;
 import ow.toleen.totoow.Model.MyUserTable.MyUserQuery;
+import ow.toleen.totoow.Model.giftfind.Mygiftfind;
 import ow.toleen.totoow.Model.giftfind.MygiftfindQuery;
 
-@Database(entities = {MyUser.class, MySubject.class, MyTask.class}, version = 2)
-    public abstract  class AppDataBase extends RoomDatabase {
+@Database(entities = {MyUser.class, MySubject.class, MyTask.class , Mygiftfind.class}, version = 2)
+    public abstract class AppDataBase extends RoomDatabase {
         private static AppDataBase db;
 
 
