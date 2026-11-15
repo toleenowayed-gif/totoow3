@@ -13,7 +13,7 @@ import ow.toleen.totoow.Model.MyUserTable.MyUserQuery;
 
 public class MyUserRepository {
     private MyUserQuery MyUserQuery;
-    private List<MyUser> allUsers;//مبنى معطيات يحوي جميع المهلام المستخرجة
+    private LiveData<List<MyUser>> allUsers;//مبنى معطيات يحوي جميع المهلام المستخرجة
 
     public MyUserRepository(Application application) {
         AppDataBase db = AppDataBase.getDB(application);
