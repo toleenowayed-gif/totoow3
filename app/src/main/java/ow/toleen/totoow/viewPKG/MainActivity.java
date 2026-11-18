@@ -90,8 +90,20 @@ public void ShowYesNoDialog(){
     AlertDialog.Builder builder=new AlertDialog.Builder(this);
     builder.setTitle("log out");
     builder.setMessage("Are you Sure");
-    builder.setPositiveButton();
-    AlertDialog dialog=builder.create();
+    builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int i) {
+            Toast.makeText(MainActivity.this, "Sining Out", Toast.LENGTH_SHORT).show();
+finish();
+        }
+    });
+    builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int i) {
+                    Toast.makeText(MainActivity.this, "Sining Out", Toast.LENGTH_SHORT).show();
+
+            }
+        AlertDialog dialog=builder.create();
     dialog.show();
 }
 }
