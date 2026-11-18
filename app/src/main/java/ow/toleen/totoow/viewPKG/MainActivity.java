@@ -1,5 +1,6 @@
 package ow.toleen.totoow.viewPKG;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -75,12 +77,21 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    public void OnOptionsItemSekected(MenuItem item) {
-        if (item.getItemId() == R.id.btnSignIn) {
-            Toast.makeText(this, "Settings", Toast.LENGTH_SHORT);
+    public boolean OnOptionsItemSelected(MenuItem item) {
+        if (R.id.Reminder == item.getItemId()) {
+            Toast.makeText(this, "Reminder", Toast.LENGTH_SHORT).show();
         }
-        if (item.getItemId() == R.id.btnSignIn) {
-
+        if (item.getItemId() == R.id.Reminder) {
+            Toast.makeText(this, "History", Toast.LENGTH_SHORT).show();
         }
+        return true;
     }
+public void ShowYesNoDialog(){
+    AlertDialog.Builder builder=new AlertDialog.Builder(this);
+    builder.setTitle("log out");
+    builder.setMessage("Are you Sure");
+    builder.setPositiveButton();
+    AlertDialog dialog=builder.create();
+    dialog.show();
+}
 }
