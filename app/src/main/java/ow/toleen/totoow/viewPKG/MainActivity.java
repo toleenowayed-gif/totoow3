@@ -80,11 +80,11 @@ public class MainActivity extends AppCompatActivity {
     public boolean OnOptionsItemSelected(MenuItem item) {
         if (R.id.Reminder == item.getItemId()) {
             Toast.makeText(this, "Reminder", Toast.LENGTH_SHORT).show();
+        } else if (item.getItemId() == R.id.Reminder) {
+            ShowYesNoDialog();
+            return true;
         }
-        if (item.getItemId() == R.id.Reminder) {
-            Toast.makeText(this, "History", Toast.LENGTH_SHORT).show();
-        }
-        return true;
+        return super.onOptionsItemSelected(item);
     }
 public void ShowYesNoDialog(){
     AlertDialog.Builder builder=new AlertDialog.Builder(this);
@@ -100,9 +100,9 @@ finish();
     builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
         @Override
         public void onClick(DialogInterface dialog, int i) {
-                    Toast.makeText(MainActivity.this, "Sining Out", Toast.LENGTH_SHORT).show();
-
-            }
+            Toast.makeText(MainActivity.this, "Sining Out", Toast.LENGTH_SHORT).show();
+        }
+            });
         AlertDialog dialog=builder.create();
     dialog.show();
 }
