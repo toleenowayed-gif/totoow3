@@ -44,6 +44,7 @@ public class SignInActivity extends  AppCompatActivity  {
         etPassword=findViewById(R.id.etPassword);
         btnSignIn=findViewById(R.id.btnSignIn);
         btnGoToRegister=findViewById(R.id.btnGoToRegister);
+
         btnSignIn.setOnClickListener(v -> SignInUser());
         userViewModel=new ViewModelProvider(this).get(MyUserViewModel.class);
     }

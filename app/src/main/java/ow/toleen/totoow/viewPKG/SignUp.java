@@ -1,6 +1,8 @@
 package ow.toleen.totoow.viewPKG;
 
 import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,9 +17,9 @@ import ow.toleen.totoow.R;
 
 public class SignUp extends AppCompatActivity {
  private   TextView textView;
-    private TextView editTextText3;
- private EditText editTextTextEmailAddress;
- private EditText editTextTextPassword;
+ private TextView etfullName;
+ private EditText etEmail;
+ private EditText etpassword;
  private  EditText editTextPhone;
  private  Button button3;
     @Override
@@ -31,10 +33,33 @@ public class SignUp extends AppCompatActivity {
             return insets;
         });
         textView=findViewById(R.id.textView);
-        editTextText3=findViewById(R.id.editTextText3);
-        editTextTextEmailAddress=findViewById(R.id.editTextTextEmailAddress);
-        editTextTextPassword=findViewById(R.id.editTextTextPassword);
+        etfullName=findViewById(R.id.etfullName);
+        etEmail=findViewById(R.id.etEmail);
+        etpassword=findViewById(R.id.password);
         editTextPhone=findViewById(R.id.editTextPhone);
         button3=findViewById(R.id.button3);
+        button3.setOnClickListener(v ->{
+            String FullName=etfullName.getText().toString().trim();
+            String email =etEmail.getText().toString().trim();
+            String password =etpassword.getText().toString().trim();
+
+
+        }
+
+        if(FullName.isEmpty()){
+            FullName.setError("FullName is required");
+            FullName.requestFocus();
+            return;
+        }
+        if(email.isEmpty()){
+            etEmail.setError("email is required");
+            etEmail.requestFocus();
+            return;
+        }
+        if(password.isEmpty()){
+            password.setError("password is required");
+            password.requestFocus();
+            return;
+        }
     }
 }
