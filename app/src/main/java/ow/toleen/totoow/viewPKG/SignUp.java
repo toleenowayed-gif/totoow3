@@ -1,27 +1,35 @@
 package ow.toleen.totoow.viewPKG;
 
+import static ow.toleen.totoow.R.*;
+import static ow.toleen.totoow.R.id.phone;
+
+import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.ViewModelProvider;
 
+import ow.toleen.totoow.Model.MyUserTable.MyUser;
 import ow.toleen.totoow.R;
+import ow.toleen.totoow.ViewModel.MyUserViewModel;
+import ow.toleen.totoow.repositores.MyUserRepository;
 
 public class SignUp extends AppCompatActivity {
- private   TextView textView;
- private TextView etfullName;
- private EditText etEmail;
- private EditText etpassword;
- private  EditText editTextPhone;
- private  Button button3;
+    private TextView textView;
+    private TextView etfullName;
+    private EditText etEmail;
+    private EditText etpassword;
+    private EditText etphone ;
+    private Button button3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,34 +40,59 @@ public class SignUp extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        textView=findViewById(R.id.textView);
-        etfullName=findViewById(R.id.etfullName);
-        etEmail=findViewById(R.id.etEmail);
-        etpassword=findViewById(R.id.password);
-        editTextPhone=findViewById(R.id.editTextPhone);
-        button3=findViewById(R.id.button3);
-        button3.setOnClickListener(v ->{
-            String FullName=etfullName.getText().toString().trim();
-            String email =etEmail.getText().toString().trim();
-            String password =etpassword.getText().toString().trim();
+        textView = findViewById(R.id.textView);
+        etfullName = findViewById(R.id.FullName);
+        etEmail = findViewById(R.id.email);
+        etpassword = findViewById(R.id.password);
+        etphone= findViewById(R.id.phone);
+        button3 = findViewById(R.id.button3);
+        button3.setOnClickListener(v -> SignUpUser());
+        MyUserViewModel userViewModel = new ViewModelProvider(this).get(MyUserViewModel.class);
+    }
+
+    private void SignUpUser()
+
+    {
+        String fullName = etfullName.getText().toString().trim();
+        String email = etEmail.getText().toString().trim();
+        String password = etpassword.getText().toString().trim();
+        String phone = etphone.getText().toString().trim();
 
 
-        }
-
-        if(FullName.isEmpty()){
-            FullName.setError("FullName is required");
-            FullName.requestFocus();
+        if (fullName.isEmpty()) {
+            etfullName.setError("FullName is required");
+            etfullName.requestFocus();
             return;
         }
-        if(email.isEmpty()){
+        if (email.isEmpty()) {
             etEmail.setError("email is required");
             etEmail.requestFocus();
             return;
         }
-        if(password.isEmpty()){
-            password.setError("password is required");
-            password.requestFocus();
+        if (password.isEmpty()) {
+            etpassword.setError("password is required");
+            etpassword.requestFocus();
             return;
         }
+        if (phone.isEmpty()) {
+            etphone.setError("phone is required");
+            etphone.requestFocus();
+            return;
+        }
+        MyUser user=new MyUser();
+        user.setFullName(fullName);
+        user.email=email;
+        user.passw=password;
+        user.phone=phone;
+
+        MyUserRepository.insert(user);
+
+        Toast.makeText(this, "Acount created succesfully !Welcome, " + user.getFullName(), Toast.LENGTH_SHORT).show();
+         Intent intent=new Intent(SignUp.this,MainActivity.class);
+         intent.putExtra("userName",fullName);
+        intent.putExtra("Email",email);
+        startActivity(intent);
+        finish();
+
     }
 }
