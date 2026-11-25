@@ -2,6 +2,7 @@ package ow.toleen.totoow.viewPKG;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -19,15 +20,15 @@ import ow.toleen.totoow.Model.MyUserTable.MyUser;
 import ow.toleen.totoow.R;
 import ow.toleen.totoow.ViewModel.MyUserViewModel;
 
-public class SignInActivity extends  AppCompatActivity  {
+public class SignInActivity extends  AppCompatActivity {
 
     private TextView tvSignInTitle;
     private EditText etEmail;
-    private  EditText etPassword;
+    private EditText etPassword;
     private Button btnSignIn;
-     private  Button btnGoToRegister;
+    private Button btnGoToRegister;
 
-      private MyUserViewModel userViewModel;
+    private MyUserViewModel userViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,16 +40,21 @@ public class SignInActivity extends  AppCompatActivity  {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        tvSignInTitle=findViewById(R.id.tvSignInTitle);
-        etEmail=findViewById(R.id.etEmail);
-        etPassword=findViewById(R.id.etPassword);
-        btnSignIn=findViewById(R.id.btnSignIn);
-        btnGoToRegister=findViewById(R.id.btnGoToRegister);
+        tvSignInTitle = findViewById(R.id.tvSignInTitle);
+        etEmail = findViewById(R.id.etEmail);
+        etPassword = findViewById(R.id.etPassword);
+        btnSignIn = findViewById(R.id.btnSignIn);
+        btnGoToRegister = findViewById(R.id.btnGoToRegister);
 
         btnSignIn.setOnClickListener(v -> SignInUser());
-        userViewModel=new ViewModelProvider(this).get(MyUserViewModel.class);
-    }
+        btnGoToRegister.setOnClickListener(v -> {
+            Intent intent = new Intent(SignInActivity.this, SignUp.class);
+            startActivity(intent);
+        });
+        userViewModel = new ViewModelProvider(this).get(MyUserViewModel.class);
 
+
+    }
     private void SignInUser() {
         String email = etEmail.getText().toString().trim();
         String password = etPassword.getText().toString().trim();
@@ -74,6 +80,7 @@ public class SignInActivity extends  AppCompatActivity  {
             Toast.makeText(this, "Invalid email or password", Toast.LENGTH_SHORT).show();
         }
     }
-}
+    }
+
 
 

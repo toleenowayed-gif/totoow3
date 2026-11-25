@@ -81,7 +81,9 @@ public class MyUserRepository {
     public LiveData<List<MyUser>> getuserBypassw(String passw) {
         return null;
     }
+    public void insert(MyUser... Users) {MyUserQuery.insertAll(Users);
 
+    }
     public void updateUser(long keyId, String fullName, String email, String phone, String passw) {
     }
     public void deleteUserBykeyId(long keyId) {

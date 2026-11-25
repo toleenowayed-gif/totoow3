@@ -29,6 +29,7 @@ public class SignUp extends AppCompatActivity {
     private EditText etpassword;
     private EditText etphone ;
     private Button button3;
+    private MyUserViewModel userViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +48,7 @@ public class SignUp extends AppCompatActivity {
         etphone= findViewById(R.id.phone);
         button3 = findViewById(R.id.button3);
         button3.setOnClickListener(v -> SignUpUser());
-        MyUserViewModel userViewModel = new ViewModelProvider(this).get(MyUserViewModel.class);
+         userViewModel = new ViewModelProvider(this).get(MyUserViewModel.class);
     }
 
     private void SignUpUser()
@@ -85,7 +86,7 @@ public class SignUp extends AppCompatActivity {
         user.passw=password;
         user.phone=phone;
 
-        MyUserRepository.insert(user);
+        userViewModel.insert(user);
 
         Toast.makeText(this, "Acount created succesfully !Welcome, " + user.getFullName(), Toast.LENGTH_SHORT).show();
          Intent intent=new Intent(SignUp.this,MainActivity.class);
