@@ -9,6 +9,12 @@
     android:orientation="vertical"
     tools:context=".viewPKG.MainActivity">
 
+    <Spinner
+        android:id="@+id/spnrOpreations"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="0" />
+
     <Button
         android:id="@+id/btnAddNewTask"
         android:layout_width="match_parent"

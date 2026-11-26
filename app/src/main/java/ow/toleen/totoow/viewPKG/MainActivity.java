@@ -1,12 +1,16 @@
 package ow.toleen.totoow.viewPKG;
 
+import static ow.toleen.totoow.Model.AppDataBase.db;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -25,13 +29,16 @@ import ow.toleen.totoow.R;
 public class MainActivity extends AppCompatActivity {
     private Button btnAddNewTask;
     private Button btnRegisterScreen;
-
+    private Spinner spnrSubject;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-
-
+        setContentView(R.layout.activity_main);
+        spnrSubject=findViewById(R.id.spnrOpreations);
+        ArrayAdapter<String>adapter=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        String[]ar={"ضرب","طرح","جمع","قسمة"};
         AppDataBase db = AppDataBase.getDB(getApplicationContext());
 //2 مؤشر لكائن عمليات  لجدول
         MySubjectQuery subjectQuery = db.getMySubjectQuery();
@@ -41,8 +48,6 @@ public class MainActivity extends AppCompatActivity {
         MySubject s2 = new MySubject();
         s2.title = "Computers";
 //4 اضافة كائن للجدول
-
-        setContentView(R.layout.activity_main);
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
