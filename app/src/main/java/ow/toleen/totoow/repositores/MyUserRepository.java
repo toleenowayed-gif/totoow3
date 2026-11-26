@@ -95,9 +95,8 @@ public class MyUserRepository {
     private static MyUser getMyUserByEmail(String email) {
         return null;
     }
-
-    public MyUser login(String email, String password) {
-        return null;
+    public MyUser login(String myEmail, String myPassw) {
+        return MyUserQuery.checkEmailPassw(myEmail,myPassw);
     }
 }
 

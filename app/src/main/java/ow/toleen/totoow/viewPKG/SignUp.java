@@ -29,6 +29,7 @@ public class SignUp extends AppCompatActivity {
     private EditText etpassword;
     private EditText etphone ;
     private Button button3;
+    private Button btnGoToSignIn;
     private MyUserViewModel userViewModel;
 
     @Override
@@ -47,10 +48,14 @@ public class SignUp extends AppCompatActivity {
         etpassword = findViewById(R.id.password);
         etphone= findViewById(R.id.phone);
         button3 = findViewById(R.id.button3);
+        btnGoToSignIn=findViewById(id.btnGoToSignIn);
         button3.setOnClickListener(v -> SignUpUser());
          userViewModel = new ViewModelProvider(this).get(MyUserViewModel.class);
+        btnGoToSignIn.setOnClickListener(v -> {
+        Intent intent = new Intent(SignUp.this, SignInActivity.class);
+            startActivity(intent);
+        });
     }
-
     private void SignUpUser()
 
     {
